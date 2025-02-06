@@ -1,0 +1,10 @@
+
+data_ingestion:
+   test_size: 0.2
+
+feature_engineering:
+   max_features: 25
+
+model_building:
+   eta: 0.001
+   gamma: 1
