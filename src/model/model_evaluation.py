@@ -18,8 +18,8 @@ logger.addHandler(file_handler)
 
 try:
     # Fetch the data from data/features
-    logger.info("Loading test data from './data/features/test_bow.csv'.")
-    test_processed_data = pd.read_csv('./data/features/test_bow.csv')
+    logger.info("Loading test data from './data/features/test_tfidf.csv'.")
+    test_processed_data = pd.read_csv('./data/features/test_tfidf.csv')
     logger.debug("Test data loaded successfully.")
 except FileNotFoundError:
     logger.error("The specified test data file was not found in './data/features'.")
