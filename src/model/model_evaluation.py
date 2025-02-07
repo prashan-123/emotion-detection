@@ -83,7 +83,7 @@ except Exception as e:
 
 try:
     # Define the path to save the metrics
-    metrics_path = 'reports/metrics.json'  # Save in the 'reports' folder
+    metrics_path = './reports/metrics.json'  # Save in the 'reports' folder
     logger.info(f"Saving evaluation metrics to '{metrics_path}'.")
 
     # Save the dictionary to the 'reports/metrics.json' file
