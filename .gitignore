@@ -92,3 +92,4 @@ target/
 .mypy_cache/
 /model.pkl
 /metrics.json
+/notes.txt
