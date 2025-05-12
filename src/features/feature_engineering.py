@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import yaml
 import logging
-from sklearn.feature_extraction.text import CountVectorizer,TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 # Configure logging
 logger = logging.getLogger('feature_engineering')
@@ -76,7 +76,7 @@ except Exception as e:
 try:
     # Apply Tfidf (TfidfVectorizer)
     logger.info("Applying Tfidf (TfidfVectorizer) transformation.")
-    vectorizer = CountVectorizer(max_features=max_features)
+    vectorizer = TfidfVectorizer(max_features=max_features)
     X_train_bow = vectorizer.fit_transform(X_train)
     X_test_bow = vectorizer.transform(X_test)
     logger.debug("Tfidf transformation completed successfully.")
@@ -101,8 +101,8 @@ try:
     logger.info("Saving feature-engineered data to './data/features'.")
     data_path = os.path.join("data", "features")
     os.makedirs(data_path, exist_ok=True)
-    train_df.to_csv(os.path.join(data_path, "train_bow.csv"), index=False)
-    test_df.to_csv(os.path.join(data_path, "test_bow.csv"), index=False)
+    train_df.to_csv(os.path.join(data_path, "train_tfidf.csv"), index=False)
+    test_df.to_csv(os.path.join(data_path, "test_tfidf.csv"), index=False)
     logger.info("Feature-engineered data saved successfully.")
 except PermissionError:
     logger.error(f"Permission denied when creating or saving to '{data_path}'.")
