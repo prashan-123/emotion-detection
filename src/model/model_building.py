@@ -37,7 +37,7 @@ except Exception as e:
 try:
     # Fetch the data from data/features
     logger.info("Loading feature-engineered data from './data/features'.")
-    train_processed_data = pd.read_csv('./data/features/train_tfidf.csv')
+    train_processed_data = pd.read_csv('./data/features/train_bow.csv')
     logger.debug("Feature-engineered data loaded successfully.")
 except FileNotFoundError:
     logger.error("The specified feature-engineered data file was not found in './data/features'.")
